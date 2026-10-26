@@ -1,0 +1,4 @@
+@"
+node_modules/
+*.tgz
+"@ | Out-File -Encoding utf8 .gitignore
