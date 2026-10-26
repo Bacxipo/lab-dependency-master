@@ -1,0 +1,19 @@
+mkdir .github
+@"
+version: 2
+updates:
+  # Tự động nâng cấp các gói thư viện npm
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 3
+    labels:
+      - "security-patch"
+
+  # Tự động cập nhật GitHub Actions
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "monthly"
+"@ | Out-File -Encoding utf8 .github/dependabot.yml
